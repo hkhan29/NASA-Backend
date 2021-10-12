@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Service } from 'typedi';
 import * as fs from 'fs';
+import moment from 'moment';
 const readline = require('readline');
 
 @Service()
@@ -14,8 +15,9 @@ class SeedingService {
           input: fileStream,
           crlfDelay: Infinity
         });
-        for await (const date of rl) {
-            axios.get(`/nasa/${date}`)
+        for await (const line of rl) {
+            let date = new Date(`${line}`);
+            axios.get(`/nasa/${moment(date).format('YYYY-MM-DD')}`)
             .catch(error => {
                 console.log(error);
             });
