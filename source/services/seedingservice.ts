@@ -15,7 +15,7 @@ class SeedingService {
           crlfDelay: Infinity
         });
         for await (const date of rl) {
-            axios.get(`http://localhost:6060/nasa/${date}`)
+            axios.get(`/nasa/${date}`)
             .catch(error => {
                 console.log(error);
             });

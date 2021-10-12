@@ -6,6 +6,7 @@ import morgan from 'morgan';
 import routes from './routes/nasa';
 import Container from 'typedi';
 import SeedingService from './services/seedingservice';
+import axios from 'axios';
 
 const router: Express = express();
 
@@ -44,6 +45,12 @@ router.use((req, res, next) => {
 /** Server */
 const httpServer = http.createServer(router);
 const PORT: any = process.env.PORT ?? 6060;
+const HOST: any = process.env.HOST ?? `http://localhost`;
+const baseURL = `${HOST}:${PORT}`;
+console.log(baseURL);
+if (typeof baseURL !== 'undefined') {
+  axios.defaults.baseURL = baseURL;
+}
 httpServer.listen(PORT, () => console.log(`The server is running on port ${PORT}`));
 
 const seedingService = Container.get(SeedingService);
