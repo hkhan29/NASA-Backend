@@ -1,0 +1,32 @@
+{
+  "name": "NASA-backend",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000N\u0000A\u0000S\u0000A\u0000-\u0000B\u0000a\u0000c\u0000k\u0000e\u0000n\u0000d\u0000\r\u0000 \u0000",
+  "main": "source/server.ts",
+  "scripts": {
+    "dev": "nodemon source/server.ts",
+    "build": "rm -rf build/ && prettier --write source/ && tsc"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hkhan29/NASA-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hkhan29/NASA-Backend/issues"
+  },
+  "homepage": "https://github.com/hkhan29/NASA-Backend#readme",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/express": "^4.17.13",
+    "@types/morgan": "^1.9.3",
+    "axios": "^0.22.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.13",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.3"
+  }
+}
