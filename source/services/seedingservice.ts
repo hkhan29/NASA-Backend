@@ -9,14 +9,14 @@ class SeedingService {
     constructor() {
     }
     public async seedPhotosFromFile(): Promise<void> {
-        const fileStream = fs.createReadStream('data/date.txt');
+        const fileStream = fs.createReadStream('data/dates.txt');
 
         const rl = readline.createInterface({
           input: fileStream,
           crlfDelay: Infinity
         });
         for await (const line of rl) {
-            let date = new Date(`${line}`);
+            let date = new Date(line).toISOString();
             axios.get(`/nasa/${moment(date).format('YYYY-MM-DD')}`)
             .catch(error => {
                 console.log(error);
