@@ -1,7 +1,10 @@
 import express from 'express';
-import controller from '../controllers/nasa';
+import Container from 'typedi';
+import NasaController from '../controllers/nasa';
 const router = express.Router();
 
-router.get('/nasa/:date', controller.getPhotos);
+const nasaController = Container.get(NasaController);
+
+router.get('/nasa/:date', (req, res) => nasaController.getPhotos(req, res));
 
 export = router;

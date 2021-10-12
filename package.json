@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon source/server.ts",
     "build": "rm -rf build/ && prettier --write source/ && tsc"
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hkhan29/NASA-Backend.git"
@@ -25,8 +25,12 @@
     "axios": "^0.22.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
+    "node-ts-cache": "^4.4.0",
+    "node-ts-cache-storage-memory": "^4.4.0",
     "nodemon": "^2.0.13",
+    "reflect-metadata": "^0.1.13",
     "ts-node": "^10.3.0",
+    "typedi": "^0.10.0",
     "typescript": "^4.4.3"
   }
 }
